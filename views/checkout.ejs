@@ -1,0 +1,716 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SS Shoes - Checkout</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,700,800,900%7CPoppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font-awesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Slick slider css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Nice Select css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <!-- jquery UI css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <!-- main style css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <!-- Start Header Area -->
+    <header class="header-area">
+        <!-- main header start -->
+        <div class="main-header d-none d-lg-block">
+            <!-- header top start -->
+            <div class="header-top black-bg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="top-left-navigation">
+                                <ul class="nav align-items-center">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-end">
+                            <div class="header-social-link">
+                            </div>
+                            <ul class="user-info-block">
+                                <li><a href="/my-account"><i class="fa fa-user"></i> My Account</a></li>
+                                <li><a href="/checkout"><i class="fa fa-credit-card"></i> Checkout</a></li>
+                                <li><a onclick="logOut()" href="#"><i class="fa fa-sign-out"></i> Signout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header top end -->
+
+            <!-- header middle area start -->
+            <div class="header-main-area black-soft sticky">
+                <div class="container">
+                    <div class="row align-items-center position-relative">
+                        <!-- start logo area -->
+                        <div class="col-auto">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="assets/img/logo/logo.png" alt="Brand Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- start logo area -->
+
+                        <!-- main menu area start -->
+                        <div class="col-auto position-static">
+                            <div class="main-menu-area">
+                                <div class="main-menu">
+                                    <!-- main menu navbar start -->
+                                    <nav class="desktop-menu">
+                                        <ul>
+                                            <li class="active"><a href="/">Home</a>
+                                            </li>
+                                            <li class="position-static"><a href="#">pages <i
+                                                        class="fa fa-angle-down"></i></a>
+                                                <ul class="megamenu dropdown">
+                                                    <li class="mega-title"><span>Popular Brands</span>
+                                                        <ul>
+                                                            <li><a href="/shop?id=1&brand=Adidas">Adidas</a></li>
+                                                            <li><a href="/shop?id=1&brand=Nike">Nike</a></li>
+                                                            <li><a href="/shop?id=1&brand=Puma">Puma</a></li>
+                                                            <li><a href="/shop?id=1&brand=Sports">Sports</a></li>
+                                                            <li><a href="/shop?id=1&brand=Alian Cooper">Alian Cooper</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <% if(email != null){ %>
+                                                    <li class="mega-title"><span>Cart and Wishlist</span>
+                                                        <ul>
+                                                            
+                                                            <li><a href="/cart">cart</a></li>
+                                                            <li><a href="/checkout">checkout</a></li>
+                                                            <li><a href="/Wishlist">wishlist</a></li>
+                                                            
+                                                        </ul>
+                                                    </li>
+                                                    <% } %>
+                                                    <li class="mega-title"><span>Account Details</span>
+                                                        <ul>
+                                                            <li><a href="/my-account">my-account</a></li>
+                                                            <li><a href="/login-register">login-register</a></li>
+                                                            <% if(email != null){ %>
+                                                                <li><a href="#" onclick="logOut()">logout</a></li>
+                                                            <% } %>
+                                                            <li><a href="/about-us">about us</a></li>
+                                                            <li><a href="/contact-us">contact us</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="#">Categories <i
+                                                        class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="/shop?id=1&cat=Sneakers">Sneakers</a></li>
+                                                    <li><a href="/shop?id=1&cat=Boots">Boots</a></li>
+                                                    <li><a href="/shop?id=1&cat=Clogs">Clogs</a></li>
+                                                    <li><a href="/shop?id=1&cat=Crocs">Crocs</a></li>
+                                                    <li><a href="/shop?id=1&cat=Earth Shoes">Earth Shoes</a></li>
+                                                    <li><a href="/shop?id=1&cat=Flip Flops">Flip Flops</a></li>
+                                                    <li><a href="/shop?id=1&cat=Galoshes">Galoshes</a></li>
+                                                    <li><a href="/shop?id=1&cat=Huaraches">Huaraches</a></li>
+                                                    <li><a href="/shop?id=1&cat=Jika tabi Shoes">Jika tabi Shoes</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/shop?id=1">Shop</a></li>
+                                            <li><a href="/contact-us">Contact us</a></li>
+                                        </ul>
+                                    </nav>
+                                    <!-- main menu navbar end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- main menu area end -->
+
+                        <!-- mini cart area start -->
+                        <div class="col-auto ml-auto">
+                            <div class="header-right">
+                                <div class="header-configure-area">
+                                    <ul class="nav">
+                                        <li>
+                                            <a href="#" class="search-trigger"><i class="fa fa-search"></i></a>
+                                        </li>
+                                        <% if(email != null){ %>
+                                        <li class="mini-cart-wrap">
+                                            <a href="/cart" class="minicart-btn minicart-btn-style_2">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <span class="notification" style="display: none;"
+                                                    id="cartNotifications"></span>
+                                            </a>
+                                            <div class="cart-list-wrapper">
+                                                <ul class="cart-list" id="cartList">
+
+                                                </ul>
+                                                <ul class="minicart-pricing-box" id="miniCartPricingBox">
+
+                                                </ul>
+                                                <div class="minicart-button">
+                                                    <a href="/cart"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                                    <a href="/cart"><i class="fa fa-share"></i> Checkout</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- mini cart area end -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- header middle area end -->
+        </div>
+        <!-- main header start -->
+
+        <!-- mobile header start -->
+        <!-- mobile header start -->
+        <div class="mobile-header d-lg-none d-md-block sticky black-soft">
+            <!--mobile header top start -->
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="mobile-main-header">
+                            <div class="mobile-logo">
+                                <a href="/">
+                                    <img src="assets/img/logo/logo.png" alt="Brand Logo">
+                                </a>
+                            </div>
+                            <div class="mobile-menu-toggler">
+                                <% if(email != null){ %>
+                                <div class="mini-cart-wrap">
+                                    <a href="/cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <div id="mCartNotifications" class="notification"></div>
+                                    </a>
+                                </div>
+                                <% } %>
+                                <button class="mobile-menu-btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile header top start -->
+        </div>
+        <!-- mobile header end -->
+        <!-- mobile header end -->
+
+        <!-- offcanvas mobile menu start -->
+        <!-- off-canvas menu start -->
+        <aside class="off-canvas-wrapper">
+            <div class="off-canvas-overlay"></div>
+            <div class="off-canvas-inner-content">
+                <div class="btn-close-off-canvas">
+                    <i class="fa fa-close"></i>
+                </div>
+
+                <div class="off-canvas-inner">
+                    <!-- search box start -->
+                    <div class="search-box-offcanvas">
+                        <form>
+                            <input id="msearchProduct" type="text" placeholder="Search Product Here...">
+                            <button onclick="searchProduct()" class="search-btn"><i onclick="searchProduct()" class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- search box end -->
+
+                    <!-- mobile menu start -->
+                    <div class="mobile-navigation">
+
+                        <!-- mobile menu navigation start -->
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li class="menu-item-has-children"><a href="/">Home</a>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">pages</a>
+                                    <ul class="megamenu dropdown">
+                                        <li class="mega-title menu-item-has-children"><a href="#">Brands</a>
+                                            <ul class="dropdown">
+                                                <li><a href="/shop?brand=Adidas">Adidas</a></li>
+                                                <li><a href="/shop?brand=Puma">Puma</a></li>
+                                                <li><a href="/shop?brand=Nike"></a></li>
+                                                <li><a href="/shop?brand=Sports">Sports</a></li>
+                                                <li><a href="/shop?brand=Alian Cooper">Alian Cooper</a></li>
+                                            </ul>
+                                        </li>
+                                        <% if(email != null){ %>
+                                        <li class="mega-title menu-item-has-children"><a href="#">Checkout & WishList</a>
+                                            <ul class="dropdown">
+                                                <li><a href="/cart">cart</a></li>
+                                                <li><a href="/checkout">checkout</a></li>
+                                                <li><a href="/Wishlist">wishlist</a></li>
+                                            </ul>
+                                        </li>
+                                        <% } %>
+                                        <li class="mega-title menu-item-has-children"><a href="#">Accounts</a>
+                                            <ul class="dropdown">
+                                                <li><a href="/my-account">my-account</a></li>
+                                                <% if(email != null){ %>
+                                                <li><a onclick="logOut()" href="#">logout</a></li>
+                                                <% }else{ %>
+                                                    <li><a href="/login-register">login-register</a></li>
+                                                <% } %>
+                                                <li><a href="/about-us">about us</a></li>
+                                                <li><a href="/contact-us">contact us</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children "><a href="/shop?id=1">shop</a>
+                                </li>
+                                <li><a href="/contact-us">Contact us</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu navigation end -->
+                    </div>
+                    <!-- mobile menu end -->
+
+                    <div class="mobile-settings">
+                        <ul class="nav">
+                            <li>
+                                <div class="dropdown mobile-top-dropdown">
+                                    <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        My Account
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="myaccount">
+                                        <% if(email != null){ %>
+                                        <a class="dropdown-item" href="/my-account">My account</a>
+                                        <a class="dropdown-item" onclick="logOut()" href="#"> Signout</a>
+                                        <% }else{ %>
+                                            <a class="dropdown-item" href="/login-register"> Login & Register</a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- offcanvas widget area start -->
+                    <div class="offcanvas-widget-area">
+                        <div class="off-canvas-contact-widget">
+                            <ul>
+                                <li><i class="fa fa-mobile"></i>
+                                    <a href="#">7733877412</a>
+                                </li>
+                                <li><i class="fa fa-envelope-o"></i>
+                                    <a href="#">sharmasuraj250128@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- offcanvas widget area end -->
+                </div>
+            </div>
+        </aside>
+        <!-- off-canvas menu end -->
+        <!-- offcanvas mobile menu end -->
+    </header>
+    <!-- end Header Area -->
+
+
+    <!-- offcanvas search form start -->
+    <div class="offcanvas-search-wrapper">
+        <div class="offcanvas-search-inner">
+            <div class="offcanvas-close">
+                <i class="fa fa-close"></i>
+            </div>
+            <div class="container">
+                <div class="offcanvas-search-box">
+                    <div class="d-flex bdr-bottom w-100">
+                        <input id="searchProduct" type="text" placeholder="Search Product here...">
+                        <button onclick="searchProduct()" class="search-btn"><i onclick="searchProduct()" class="fa fa-search"></i>search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas search form end -->
+
+    <main>
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area breadcrumb-img bg-img" data-bg="assets/img/banner/sharma.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <h3 class="breadcrumb-title">SHOP</h3>
+                                <ul class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- checkout main wrapper start -->
+        <div class="checkout-page-wrapper section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Checkout Billing Details -->
+                    <div class="col-lg-6">
+                        <div class="checkout-billing-details-wrap">
+                            <h5 class="checkout-title">Billing Details</h5>
+                            <div class="billing-form-wrap">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="single-input-item">
+                                                <label for="f_name" class="required">First Name</label>
+                                                <input type="text" id="f_name" value="<%=userDetails[0].user_firstname; %>" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="single-input-item">
+                                                <label for="l_name" class="required">Last Name</label>
+                                                <input type="text" id="l_name" value="<%=userDetails[0].user_lastname; %>" required />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="email" class="required">Email Address</label>
+                                        <input type="email" id="email" value="<%=userDetails[0].user_email; %>" required />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="com-name">Company Name</label>
+                                        <input type="text" id="com-name" placeholder="Company Name" />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="country" class="required">Country</label>
+                                        <select name="country nice-select" id="country">
+                                            <option value="Afghanistan">India</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="Armenia">Armenia</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="England">England</option>
+                                            <option value="Chaina">China</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="street-address" class="required mt-20">Street address</label>
+                                        <input type="text" id="street-address" placeholder="Street address Line 1" required />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <input type="text" placeholder="Street address Line 2 (Optional)" />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="town" class="required">Town / City</label>
+                                        <input type="text" id="town" placeholder="Town / City" required />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="state">State / Divition</label>
+                                        <input type="text" id="state" placeholder="State / Divition" />
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="phone">Phone</label>
+                                        <input value="<%=userDetails[0].user_phone; %>" type="text" id="phone" placeholder="Phone" />
+                                    </div>
+
+                                    <div class="checkout-box-wrap">
+                                        
+                                        <div class="ship-to-different single-form-row">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="single-input-item">
+                                                        <label for="f_name_2" class="required">First Name</label>
+                                                        <input type="text" id="f_name_2" placeholder="First Name" required />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="single-input-item">
+                                                        <label for="l_name_2" class="required">Last Name</label>
+                                                        <input type="text" id="l_name_2" placeholder="Last Name" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="email_2" class="required">Email Address</label>
+                                                <input type="email" id="email_2" placeholder="Email Address" required />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="com-name_2">Company Name</label>
+                                                <input type="text" id="com-name_2" placeholder="Company Name" />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="country_2" class="required">Country</label>
+                                                <select name="country" id="country_2">
+                                                    <option value="Bangladesh">Bangladesh</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Pakistan">Pakistan</option>
+                                                    <option value="England">England</option>
+                                                    <option value="London">London</option>
+                                                    <option value="London">London</option>
+                                                    <option value="Chaina">Chaina</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="street-address_2" class="required mt-20">Street address</label>
+                                                <input type="text" id="street-address_2" placeholder="Street address Line 1" required />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <input type="text" placeholder="Street address Line 2 (Optional)" />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="town_2" class="required">Town / City</label>
+                                                <input type="text" id="town_2" placeholder="Town / City" required />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="state_2">State / Divition</label>
+                                                <input type="text" id="state_2" placeholder="State / Divition" />
+                                            </div>
+
+                                            <div class="single-input-item">
+                                                <label for="postcode_2" class="required">Postcode / ZIP</label>
+                                                <input type="text" id="postcode_2" placeholder="Postcode / ZIP" required />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <label for="ordernote">Order Note</label>
+                                        <textarea name="ordernote" id="ordernote" cols="30" rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Details -->
+                    <div class="col-lg-6">
+                        <div class="order-summary-details">
+                            <h5 class="checkout-title">Your Order Summary</h5>
+                            <div class="order-summary-content">
+                                <!-- Order Summary Table -->
+                                <div class="order-summary-table table-responsive text-center">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Products</b></th>
+                                                <th><b>Total</b></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% var total = 0;
+                                               var purpose = [];
+                                            allProducts.forEach(a => {
+                                                productDetails.forEach(p => {
+                                                    if(a.product_id == p.product_id){ 
+                                                        purpose.push(a.product_title);
+                                                       total = total + (a.product_price*p.product_quantity); %>
+                                            <tr>
+                                                <td><a href="product-details.html"><%=a.product_title; %> <strong> × <%=p.product_quantity; %></strong></a>
+                                                </td>
+                                                <td>$<%=a.product_price; %></td>
+                                            </tr>
+                                            <% };
+                                                });
+                                            }); %>
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>Total Amount</td>
+                                                <td>$<%=total; %></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- Order Payment Method -->
+                                <% if(total != ""){ %>
+                                <center><div class="order-payment-method">
+                                    <div class="summary-footer-area">
+                                        <button onclick="placeOrder('<%=userDetails[0].user_firstname; %>','<%=userDetails[0].user_lastname; %>','<%=userDetails[0].user_email; %>','<%=total; %>','<%=purpose; %>')" type="submit" class="btn btn-sqr">Place Order</button>
+                                    </div>
+                                </div></center>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- checkout main wrapper end -->
+    </main>
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+
+    <!-- footer area start -->
+    <footer class="black-bg">
+        <!-- newsletter area start -->
+        <section class="newsletter-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="newsletter-wrapper text-center">
+                            <h3 class="title text-white">JOIN OUR NEWSLETTER</h3>
+                            <form class="newsletter-inner" id="mc-form">
+                                <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email address">
+                                <button class="news-btn" id="mc-submit">Subscribe</button>
+                            </form>
+                            <h6 class="newsletter-subtitle">To get the latest news from us please subscribe your email.</h6>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div>
+                            <!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- newsletter area end -->
+        
+        <div class="footer-middle-area">
+            <div class="container">
+                <div class="row mtn-30">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="address-block mt-30">
+                            <div class="footer-logo">
+                                <a href="/">
+                                    <img src="assets/img/logo/logo.png" alt="Brand Logo">
+                                </a>
+                            </div>
+                            <address class="address-info d-flex align-items-center">
+                                <i class="fa fa-map-marker"></i>
+                                <p><span>ADDRESS : </span> Goverdhan, Mathura</p>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <address class="address-info email mt-30">
+                            <i class="fa fa-envelope"></i>
+                            <p><span>EMAIL : </span><a href="emailto:sharmasuraj250128@gmail.com">sharmasuraj250128@gmail.com</a></p>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <address class="address-info email mt-30">
+                            <i class="fa fa-phone"></i>
+                            <p><span>PHONE : </span><a href="tel:7733877412">7733877412</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="copyright">
+                            <p>© 2021 <b class="text-white">SS Shoes</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="http://cpur.in">Career Point</a></p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+
+
+    <!-- JS
+============================================ -->
+
+    <!-- Modernizer JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- slick Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Countdown JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <!-- jquery UI JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Image zoom JS -->
+    <script src="assets/js/plugins/image-zoom.min.js"></script>
+    <!-- image loaded js -->
+    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <!-- masonry  -->
+    <script src="assets/js/plugins/masonry.pkgd.min.js"></script>
+    <!-- mailchimp active js -->
+    <script src="assets/js/plugins/ajaxchimp.js"></script>
+    <!-- contact form dynamic js -->
+    <script src="assets/js/plugins/ajax-mail.js"></script>
+    <!-- google map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
+    <!-- google map active js -->
+    <script src="assets/js/plugins/google-map.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Checkout JS -->
+    <script src="assets/js/myJavaScript/checkout.js"></script>
+    <!-- Index JS -->
+    <script src="assets/js/myJavaScript/index.js"></script>
+    <!-- Instamojo JS -->
+    <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <!-- SweetAlert JS -->
+    <script src="assets/js/myJavaScript/sweetalert.min.js"></script>
+</body>
+
+</html>

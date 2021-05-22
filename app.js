@@ -195,7 +195,7 @@ app.get("/cart", (req,res)=>{
     res.render("cart.ejs", {email : req.session.email});
 });
 
-function setCategorisedandNullWise(query,res,id, no, u){
+function setCategorisedandNullWise(query,res,id, no, u, req){
     var last = no*id;
     var first = no*(id-1);
     var f = first;
@@ -219,12 +219,12 @@ function setCategorisedandNullWise(query,res,id, no, u){
                 si++;
         })
         conn.query(query,(lerr,lresult,lfield)=>{
-            res.render("shop-list-full-width.ejs", {u : u, result : resultList, oresult : lresult, images : simageList, len : lresult.length, first : f, last : l});
+            res.render("shop-list-full-width.ejs", {email : req.session.email, u : u, result : resultList, oresult : lresult, images : simageList, len : lresult.length, first : f, last : l});
         });
     });
 }
 
-function searchMethod(resu,res,id, no, u){
+function searchMethod(resu,res,id, no, u, req){
     var f = no*(id-1);
     var l = no*id;
     var imageList = [];
@@ -240,7 +240,7 @@ function searchMethod(resu,res,id, no, u){
                 imageList.push(sfr.sort());
                 si++;
     });
-    res.render("shop-list-full-width.ejs", {u : u, result : results, images : imageList, len : resu.length, first : f, last : l});
+    res.render("shop-list-full-width.ejs", {email : req.session.email, u : u, result : results, images : imageList, len : resu.length, first : f, last : l});
 }
 
 app.get("/shop", (req,res)=>{
@@ -251,15 +251,15 @@ app.get("/shop", (req,res)=>{
     if(search == undefined){
         if(cat == undefined){
             if(brand == undefined){
-                setCategorisedandNullWise("select * from Products", res, id, 3, 0);
+                setCategorisedandNullWise("select * from Products", res, id, 3, 0, req);
             }else{
-                setCategorisedandNullWise("select * from Products where product_company = '"+brand+"'",res, 1, 10, 1);
+                setCategorisedandNullWise("select * from Products where product_company = '"+brand+"'",res, 1, 10, 1, req);
             }
         }else{
             if(cat == undefined){
-                setCategorisedandNullWise("select * from Products", res, id, 3, 0);
+                setCategorisedandNullWise("select * from Products", res, id, 3, 0, req);
             }else{
-                setCategorisedandNullWise("select * from Products where product_category = '"+cat+"'",res, 1, 10, 1);
+                setCategorisedandNullWise("select * from Products where product_category = '"+cat+"'",res, 1, 10, 1, req);
             }
         }
     }else if(search != undefined){
@@ -275,7 +275,7 @@ app.get("/shop", (req,res)=>{
             };
             const fse = new fuse(r,options);
             const resu = fse.search(search);
-            searchMethod(resu,res,1,10,1);
+            searchMethod(resu,res,1,10,1,req);
         });
     }
 });

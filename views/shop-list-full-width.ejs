@@ -51,9 +51,13 @@
                             <div class="header-social-link">
                             </div>
                             <ul class="user-info-block">
+                                <% if(email != null){ %>
                                 <li><a href="/my-account"><i class="fa fa-user"></i> My Account</a></li>
                                 <li><a href="/checkout"><i class="fa fa-credit-card"></i> Checkout</a></li>
-                                <li><a href="/login-register"><i class="fa fa-sign-in"></i> Sign In</a></li>
+                                <li><a onclick="logOut()" href="#"><i class="fa fa-sign-out"></i> Signout</a></li>
+                                <% }else{ %>
+                                    <li><a href="/login-register"><i class="fa fa-sign-in"></i> Sign In</a></li>
+                                <% } %>
                             </ul>
                         </div>
                     </div>
@@ -96,18 +100,24 @@
                                                             <li><a href="/shop?id=1&brand=Alian Cooper">Alian Cooper</a></li>
                                                         </ul>
                                                     </li>
+                                                    <% if(email != null){ %>
                                                     <li class="mega-title"><span>Cart and Wishlist</span>
                                                         <ul>
+                                                            
                                                             <li><a href="/cart">cart</a></li>
                                                             <li><a href="/checkout">checkout</a></li>
-                                                            <li><a href="/compare">compare</a></li>
                                                             <li><a href="/Wishlist">wishlist</a></li>
+                                                            
                                                         </ul>
                                                     </li>
+                                                    <% } %>
                                                     <li class="mega-title"><span>Account Details</span>
                                                         <ul>
                                                             <li><a href="/my-account">my-account</a></li>
                                                             <li><a href="/login-register">login-register</a></li>
+                                                            <% if(email != null){ %>
+                                                                <li><a href="#" onclick="logOut()">logout</a></li>
+                                                            <% } %>
                                                             <li><a href="/about-us">about us</a></li>
                                                             <li><a href="/contact-us">contact us</a></li>
                                                         </ul>
@@ -147,6 +157,7 @@
                                         <li>
                                             <a href="#" class="search-trigger"><i class="fa fa-search"></i></a>
                                         </li>
+                                        <% if(email != null){ %>
                                         <li class="mini-cart-wrap">
                                             <a href="#" class="minicart-btn minicart-btn-style_2">
                                                 <i class="fa fa-shopping-cart"></i>
@@ -166,6 +177,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <% } %>
                                     </ul>
                                 </div>
                             </div>
@@ -193,12 +205,14 @@
                                 </a>
                             </div>
                             <div class="mobile-menu-toggler">
+                                <% if(email != null){ %>
                                 <div class="mini-cart-wrap">
                                     <a href="/cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         <div id="mCartNotifications" class="notification"></div>
                                     </a>
                                 </div>
+                                <% } %>
                                 <button class="mobile-menu-btn">
                                     <span></span>
                                     <span></span>
@@ -227,8 +241,8 @@
                     <!-- search box start -->
                     <div class="search-box-offcanvas">
                         <form>
-                            <input type="text" placeholder="Search Here...">
-                            <button class="search-btn"><i class="fa fa-search"></i></button>
+                            <input id="msearchProduct" type="text" placeholder="Search Here...">
+                            <button onclick="searchProduct()" class="search-btn"><i onclick="searchProduct()" class="fa fa-search"></i></button>
                         </form>
                     </div>
                     <!-- search box end -->
@@ -240,98 +254,44 @@
                         <nav>
                             <ul class="mobile-menu">
                                 <li class="menu-item-has-children"><a href="/">Home</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home version 01</a></li>
-                                        <li><a href="index-2.html">Home version 02</a></li>
-                                        <li><a href="index-3.html">Home version 03</a></li>
-                                        <li><a href="index-4.html">Home version 04</a></li>
-                                        <li><a href="index-5.html">Home version 05</a></li>
-                                        <li><a href="index-6.html">Home version 06</a></li>
-                                    </ul>
                                 </li>
                                 <li class="menu-item-has-children"><a href="#">pages</a>
                                     <ul class="megamenu dropdown">
-                                        <li class="mega-title menu-item-has-children"><a href="#">column 01</a>
+                                        <li class="mega-title menu-item-has-children"><a href="#">Brands</a>
                                             <ul class="dropdown">
-                                                <li><a href="shop.html">shop grid left sidebar</a></li>
-                                                <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                        sidebar</a></li>
-                                                <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
+                                                <li><a href="/shop?brand=Adidas">Adidas</a></li>
+                                                <li><a href="/shop?brand=Puma">Puma</a></li>
+                                                <li><a href="/shop?brand=Nike"></a></li>
+                                                <li><a href="/shop?brand=Sports">Sports</a></li>
+                                                <li><a href="/shop?brand=Alian Cooper">Alian Cooper</a></li>
                                             </ul>
                                         </li>
-                                        <li class="mega-title menu-item-has-children"><a href="#">column 02</a>
+                                        <% if(email != null){ %>
+                                        <li class="mega-title menu-item-has-children"><a href="#">Checkout & WishList</a>
                                             <ul class="dropdown">
-                                                <li><a href="product-details.html">product details</a></li>
-                                                <li><a href="product-details-affiliate.html">product
-                                                        details
-                                                        affiliate</a></li>
-                                                <li><a href="product-details-variable.html">product details
-                                                        variable</a></li>
-                                                <li><a href="product-details-group.html">product details
-                                                        group</a></li>
+                                                <li><a href="/cart">cart</a></li>
+                                                <li><a href="/checkout">checkout</a></li>
+                                                <li><a href="/Wishlist">wishlist</a></li>
                                             </ul>
                                         </li>
-                                        <li class="mega-title menu-item-has-children"><a href="#">column 03</a>
+                                        <% } %>
+                                        <li class="mega-title menu-item-has-children"><a href="#">Accounts</a>
                                             <ul class="dropdown">
-                                                <li><a href="cart.html">cart</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
-                                                <li><a href="compare.html">compare</a></li>
-                                                <li><a href="wishlist.html">wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mega-title menu-item-has-children"><a href="#">column 04</a>
-                                            <ul class="dropdown">
-                                                <li><a href="my-account.html">my-account</a></li>
-                                                <li><a href="login-register.html">login-register</a></li>
-                                                <li><a href="about-us.html">about us</a></li>
-                                                <li><a href="contact-us.html">contact us</a></li>
+                                                <li><a href="/my-account">my-account</a></li>
+                                                <% if(email != null){ %>
+                                                <li><a onclick="logOut()" href="#">logout</a></li>
+                                                <% }else{ %>
+                                                    <li><a href="/login-register">login-register</a></li>
+                                                <% } %>
+                                                <li><a href="/about-us">about us</a></li>
+                                                <li><a href="/contact-us">contact us</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children "><a href="#">shop</a>
-                                    <ul class="dropdown">
-                                        <li class="menu-item-has-children"><a href="#">shop grid layout</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop.html">shop grid left sidebar</a></li>
-                                                <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
-                                                <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a></li>
-                                                <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">shop list layout</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                                <li><a href="shop-list-full-width.html">shop list full width</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children"><a href="#">products details</a>
-                                            <ul class="dropdown">
-                                                <li><a href="product-details.html">product details</a></li>
-                                                <li><a href="product-details-affiliate.html">product details affiliate</a></li>
-                                                <li><a href="product-details-variable.html">product details variable</a></li>
-                                                <li><a href="product-details-group.html">product details group</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="menu-item-has-children "><a href="/shop?id=1">shop</a>
                                 </li>
-                                <li class="menu-item-has-children "><a href="#">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                        <li><a href="blog-list-left-sidebar.html">blog list left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                        <li><a href="blog-list-right-sidebar.html">blog list right sidebar</a></li>
-                                        <li><a href="blog-grid-full-width.html">blog grid full width</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                        <li><a href="blog-details-left-sidebar.html">blog details left sidebar</a></li>
-                                        <li><a href="blog-details-audio.html">blog details audio</a></li>
-                                        <li><a href="blog-details-video.html">blog details video</a></li>
-                                        <li><a href="blog-details-image.html">blog details image</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact-us.html">Contact us</a></li>
+                                <li><a href="/contact-us">Contact us</a></li>
                             </ul>
                         </nav>
                         <!-- mobile menu navigation end -->
@@ -377,8 +337,8 @@
             <div class="container">
                 <div class="offcanvas-search-box">
                     <form class="d-flex bdr-bottom w-100">
-                        <input type="text" placeholder="Search Product here...">
-                        <button class="search-btn"><i class="fa fa-search"></i>search</button>
+                        <input id="searchProduct" type="text" placeholder="Search Product here...">
+                        <button onclick="searchProduct()" class="search-btn"><i onclick="searchProduct()" class="fa fa-search"></i>search</button>
                     </form>
                 </div>
             </div>
@@ -443,7 +403,7 @@
                                     result.forEach(r => { %>
                                     <div class="product-list-item">
                                         <div class="product-thumb">
-                                            <a href="product-details.html">
+                                            <a href="/product-details?id=<%=r.product_id; %>">
                                                 <img src="<%='assets/img/product/MyProductImages/'+images[i][0]+'.png'; %>" alt="product thumb">
                                             </a>
                                             <div class="button-group">
@@ -463,14 +423,7 @@
                                                 <% } %>
                                         </div>
                                         <div class="product-content-list">
-                                            <h4 class="product-name"><a href="product-details.html"><%=r.product_title; %></a></h4>
-                                            <div class="ratings">
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                            </div>
+                                            <h4 class="product-name"><a href="/product-details?id=<%=r.product_id; %>"><%=r.product_title; %></a></h4>
                                             <div class="price-box">
                                                 <% var avar=r.product_price*(r.product_offer/100); 
                                                 var adiscount=r.product_price - avar; %>
@@ -556,64 +509,7 @@
             </div>
         </section>
         <!-- newsletter area end -->
-        <div class="footer-widget-area">
-            <div class="container">
-                <div class="row mtn-30">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget-item mt-30">
-                            <h6 class="widget-title">CUSTOM LINKS</h6>
-                            <ul class="usefull-links">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Order Status</a></li>
-                                <li><a href="#">Returns & Exchanges</a></li>
-                                <li><a href="#">Size Guide</a></li>
-                                <li><a href="#">Cart</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget-item mt-30">
-                            <h6 class="widget-title">PRODUCTS</h6>
-                            <ul class="usefull-links">
-                                <li><a href="#">Prices drop</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Best sales</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Sitemap</a></li>
-                                <li><a href="#">Stores</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget-item mt-30">
-                            <h6 class="widget-title">OUR COMPANY</h6>
-                            <ul class="usefull-links">
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Legal Notice</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Secure payment</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Sitemap</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget-item mt-30">
-                            <h6 class="widget-title">YOUR ACCOUNT</h6>
-                            <ul class="usefull-links">
-                                <li><a href="#">Personal info</a></li>
-                                <li><a href="#">Orders</a></li>
-                                <li><a href="#">Credit slips</a></li>
-                                <li><a href="#">Addresses</a></li>
-                                <li><a href="#">Stores</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="footer-middle-area">
             <div class="container">
                 <div class="row mtn-30">
@@ -652,15 +548,8 @@
                         <div class="payment-method-list">
                             <img src="assets/img/payment-2.png" alt="payment method">
                         </div>
-                        <div class="footer-link">
-                            <a href="#">SITE MAP</a>
-                            <a href="#">SEARCH TERMS</a>
-                            <a href="#">ADVANCED SEARCH</a>
-                            <a href="#">ORDERS AND RETURNS</a>
-                            <a href="#">CONTACT US</a>
-                        </div>
                         <p class="copyright">
-                            <p>© 2021 <b class="text-white">Pullman</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes</a></p>
+                            <p>© 2021 <b class="text-white">SS Shoes</b> Made with <i class="fa fa-heart text-danger"></i> by <a href="http://cpur.in/">Career Point</a></p>
                         </p>
                     </div>
                 </div>
@@ -715,16 +604,6 @@
                             <div class="col-lg-7">
                                 <div class="product-details-des">
                                     <h3 class="product-name" id="quickViewTitleName"></h3>
-                                    <div class="ratings d-flex">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <div class="pro-review">
-                                            <span>1 Reviews</span>
-                                        </div>
-                                    </div>
                                     <div class="price-box">
                                         <span class="price-old"><del id="quickViewOldPrice"></del></span>
                                         <span class="price-regular" id="quickViewNewPrice"></span>
@@ -744,8 +623,6 @@
                                         </div>
                                     </div>
                                     <div class="useful-links">
-                                        <a href="#" data-toggle="tooltip" title="Compare"><i
-                                                class="fa fa-refresh"></i>compare</a>
                                         <a style="cursor: pointer;" data-toggle="tooltip" onclick="addProductIntoWishlistFromQuickView()" title="Wishlist"><i class="fa fa-heart-o"></i>wishlist</a>
                                     </div>
                                 </div>
